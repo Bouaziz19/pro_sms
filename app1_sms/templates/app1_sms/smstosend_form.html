@@ -1,0 +1,45 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'app1_sms_smstosend_list' %}">
+    smstosend Listing
+    </a>
+</p>
+    
+<form method="post">
+{% csrf_token %}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="status">status: </label>
+  <input class="form-control col-sm-10" id="status" type="text" name="status" value="{{ object.status }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="num_phone">num_phone: </label>
+  <input class="form-control col-sm-10" id="num_phone" type="text" name="num_phone" value="{{ object.num_phone }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
+  <input class="form-control col-sm-10" id="last_updated" type="date" name="last_updated" value="{{ object.last_updated }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="body_sms">body_sms: </label>
+  <input class="form-control col-sm-10" id="body_sms" type="text" name="body_sms" value="{{ object.body_sms }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="created">created: </label>
+  <input class="form-control col-sm-10" id="created" type="date" name="created" value="{{ object.created }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="id_pv">id_pv: </label>
+  <input class="form-control col-sm-10" id="id_pv" type="number" name="id_pv" value="{{ object.id_pv }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="name">name: </label>
+  <input class="form-control col-sm-10" id="name" type="text" name="name" value="{{ object.name }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

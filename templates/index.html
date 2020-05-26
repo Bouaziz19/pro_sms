@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="m-2"><h4>app1_sms</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'app1_sms_smsonattente_list' %}">smsonattente Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'app1_sms_sys_paramt_list' %}">sys_paramt Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'app1_sms_smstosend_list' %}">smstosend Listing</a></div>
+{% endblock %}

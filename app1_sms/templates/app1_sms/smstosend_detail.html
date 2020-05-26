@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'app1_sms_smstosend_list' %}">
+    smstosend Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>status</td><td>{{ object.status }}</td></tr>
+    <tr><td>num_phone</td><td>{{ object.num_phone }}</td></tr>
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+    <tr><td>body_sms</td><td>{{ object.body_sms }}</td></tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+    <tr><td>id_pv</td><td>{{ object.id_pv }}</td></tr>
+    <tr><td>name</td><td>{{ object.name }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}
